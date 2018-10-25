@@ -29,8 +29,7 @@ riff function create java notifier \
   --env SPRING_MAIL_PASSWORD=$SPRING_MAIL_PASSWORD \
   --env SPRING_MAIL_PROPERTIES_MAIL_SMTP_AUTH=$SPRING_MAIL_PROPERTIES_MAIL_SMTP_AUTH \
   --env SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_ENABLE=$SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_ENABLE \
-  --verbose \
-  --wait
+  --verbose
 ```
 
 #### create from git repo, pushing image to DockerHub
@@ -38,8 +37,13 @@ riff function create java notifier \
 riff function create java hello \
     --git-repo https://github.com/doddatpivotal/notifier.git \
     --image $DOCKER_ID/notifier \
-  --verbose \
-  --wait
+    --env SPRING_MAIL_HOST=$SPRING_MAIL_HOST \
+    --env SPRING_MAIL_PORT=$SPRING_MAIL_PORT \
+    --env SPRING_MAIL_USERNAME=$SPRING_MAIL_USERNAME \
+    --env SPRING_MAIL_PASSWORD=$SPRING_MAIL_PASSWORD \
+    --env SPRING_MAIL_PROPERTIES_MAIL_SMTP_AUTH=$SPRING_MAIL_PROPERTIES_MAIL_SMTP_AUTH \
+    --env SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_ENABLE=$SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_ENABLE \
+    --verbose
 ```
 To set `$DOCKER_ID` do `export DOCKER_ID=your-docker-id`
 
