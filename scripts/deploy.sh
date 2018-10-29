@@ -1,6 +1,7 @@
+#!/usr/bin/env bash
 riff service delete notifier
 
-set localpath = ${1:-.}
+localpath=${1:-.}
 
 riff function create java notifier \
     --local-path $localpath \
